@@ -7,7 +7,10 @@ if [ ! -d ".repo/local_manifests" ]
 then 
     cd .repo
     git clone https://github.com/sonyxperiadev/local_manifests
-    cd local_manifests && git checkout origin/android-7.1.2_r36
+    cd local_manifests
+    git checkout android-7.1.2_r36
+    git branch --set-upstream-to=origin/android-7.1.2_r36
+    git reset --hard origin/android-7.1.2_r36
     cd ../..
     repo sync
 fi
