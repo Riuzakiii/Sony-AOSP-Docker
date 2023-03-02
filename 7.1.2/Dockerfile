@@ -9,8 +9,10 @@ RUN apt-get install git curl repo rsync openjdk-8-jdk bison g++-multilib git gpe
 # copy the setup/build scripts
 COPY run_build.sh /home/run_build.sh
 COPY setup_repo.sh /home/setup_repo.sh
+COPY build_kernel.sh /home/build_kernel.sh
 RUN chmod a+x /home/run_build.sh
 RUN chmod a+x /home/setup_repo.sh
+RUN chmod a+x /home/build_kernel.sh
 
 USER root
 # From https://stackoverflow.com/questions/67363030/rebuild-android-code-with-error-ssl-error-when-connecting-to-the-jack-server-t
